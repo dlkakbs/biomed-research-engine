@@ -2,9 +2,9 @@
 
 Agentic biomedical research workflow for repurposing analysis, built around real payment rails.
 
-## Built for the Agentic Economy on Arc Hackathon
+# Built for the Agentic Economy on Arc Hackathon
 
-# Categories:
+ Categories:
 - `Usage-Based Compute Billing`
 - `Real-Time Micro-Commerce Flow`
 
