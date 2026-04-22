@@ -1,0 +1,47 @@
+[
+  {
+    "agentName": "pi",
+    "eventType": "info",
+    "message": "Pipeline started for idiopathic pulmonary fibrosis and budget was reserved for paid research services."
+  },
+  {
+    "agentName": "literature",
+    "eventType": "info",
+    "message": "Literature completed: 9 disease-focused papers cleared from 14 retrieved papers"
+  },
+  {
+    "agentName": "drugdb",
+    "eventType": "info",
+    "message": "DrugDB completed: 7 ChEMBL targets, 5 Open Targets drug rows, 12 activity-linked molecules, and 8 expanded candidates"
+  },
+  {
+    "agentName": "pathway",
+    "eventType": "info",
+    "message": "Pathway completed: 8 pathways, 3 active trials, 2 genetic evidence blocks"
+  },
+  {
+    "agentName": "repurposing",
+    "eventType": "info",
+    "message": "Repurposing completed: 2 shortlist hypotheses and 1 follow-up hypothesis prepared for evidence review"
+  },
+  {
+    "agentName": "evidence",
+    "eventType": "info",
+    "message": "Evidence completed: scored 2 candidates for final review"
+  },
+  {
+    "agentName": "red_team",
+    "eventType": "info",
+    "message": "Red-team completed with 1 caution note for safety monitoring"
+  },
+  {
+    "agentName": "report",
+    "eventType": "info",
+    "message": "Report completed: 1 top candidate, 1 early-stage hypothesis, and supporting literature packaged for delivery"
+  },
+  {
+    "agentName": "pi",
+    "eventType": "info",
+    "message": "Pipeline completed and the report package is ready."
+  }
+]

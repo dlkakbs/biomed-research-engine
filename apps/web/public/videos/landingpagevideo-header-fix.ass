@@ -1,0 +1,16 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 2018
+PlayResY: 1144
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Brand,Arial,10,&H00FFD79B,&H00FFD79B,&H0004070D,&H0004070D,0,0,0,0,100,100,2,0,1,0,0,7,258,0,22,0
+Style: Title,Arial,18,&H00FFFFFF,&H00FFFFFF,&H0004070D,&H0004070D,-1,0,0,0,100,100,0,0,1,0,0,7,258,0,34,0
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:40.00,0:02:21.28,Brand,,0,0,0,,VELIORA
+Dialogue: 0,0:00:40.00,0:02:21.28,Title,,0,0,0,,BioMed Research Engine

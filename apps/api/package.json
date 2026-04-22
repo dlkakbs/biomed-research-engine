@@ -1,0 +1,29 @@
+{
+  "name": "@biomed/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "debug:x402:supported": "tsx src/scripts/debug-x402-supported.ts",
+    "debug:x402:verify": "tsx src/scripts/debug-x402-verify.ts",
+    "debug:x402:settle": "tsx src/scripts/debug-x402-settle.ts",
+    "debug:x402:local-paid": "tsx src/scripts/debug-x402-local-paid.ts",
+    "debug:x402:live-sign": "tsx src/scripts/debug-x402-live-sign.ts",
+    "debug:gateway:balances": "tsx src/scripts/debug-gateway-balances.ts",
+    "debug:gateway:deposit": "tsx src/scripts/debug-gateway-deposit.ts",
+    "debug:run:literature": "tsx src/scripts/debug-run-literature.ts",
+    "debug:run:literature:inspect": "tsx src/scripts/debug-run-literature-inspect.ts",
+    "hackathon:batch": "tsx src/scripts/run-hackathon-batch.ts"
+  },
+  "dependencies": {
+    "@biomed/agents": "*",
+    "@biomed/db": "*",
+    "@biomed/gateway-seller": "*",
+    "@biomed/orchestration": "*",
+    "@biomed/payments": "*",
+    "@biomed/shared": "*"
+  }
+}

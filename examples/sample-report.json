@@ -1,0 +1,152 @@
+{
+  "agent": "finalizer",
+  "status": "completed",
+  "provenance": {
+    "demo": true,
+    "seed_source": "examples/sample-report.json",
+    "note": "Sanitized demo payload for local evaluation only."
+  },
+  "report": {
+    "pipeline_stopped_before_shortlist": false,
+    "summary": "This run prioritized IMETELSTAT as the strongest repurposing signal for idiopathic pulmonary fibrosis. The mechanism fit comes from telomere-maintenance biology, fibrosis-remodeling overlap, and limited but interpretable clinical context. The report should still be treated as a research prioritization output rather than proof of efficacy.",
+    "methodology": "This report was generated through a structured computational workflow for idiopathic pulmonary fibrosis candidate prioritization. The pipeline reviewed 14 papers, carried 9 disease-screened records into synthesis, screened 8 candidate contexts from drug and target data, and checked 3 active clinical trial links. A fixed 100-point rubric was then applied across literature support, biology overlap, clinical evidence, safety profile, and genetic context. Genetic support was treated as disease-biology context rather than target validation. Key limitations: the shortlist remains hypothesis-generating, and any follow-up would require biomarker-aware translational validation before clinical interpretation.",
+    "retrieval_note": "14 papers were retrieved from literature search and 9 passed disease-specific screening.",
+    "literature_diagnostics": {
+      "retrieved_count": 14,
+      "final_shortlist_count": 9,
+      "user_summary": "9 papers carrying forward into synthesis after disease-specific screening."
+    },
+    "drugdb_note": "DrugDB surfaced 8 activity-linked candidate contexts across telomere and fibrosis-remodeling biology.",
+    "repurposing_note": "Repurposing promoted 2 candidates into the shortlist and kept 1 exploratory hypothesis for follow-up.",
+    "evidence_note": "Evidence scoring completed for 2 shortlist candidates.",
+    "red_team_note": "Red-team review requested closer hematologic safety monitoring for telomerase-directed follow-up.",
+    "genetic_evidence_summary": "We reviewed supportive disease-biology evidence from OpenTargets associatedTargets proxy. The strongest genes in this pass were TERT, RTEL1, MUC5B. Genetic support score: 0.74.",
+    "common_failure_pattern_summary": "Lower-ranked candidates often lost priority because they had fibrosis-remodeling overlap but weak disease-specific literature support or no direct telomere-maintenance anchor.",
+    "active_trials": [
+      {
+        "nct_id": "NCT04567890",
+        "title": "Telomerase-pathway biomarker study in progressive pulmonary fibrosis",
+        "phase": "Phase 2",
+        "status": "Recruiting",
+        "drugs": ["Imetelstat"]
+      }
+    ],
+    "literature_papers": [
+      {
+        "title": "Short telomeres and telomerase pathway dysfunction in idiopathic pulmonary fibrosis",
+        "journal": "American Journal of Respiratory and Critical Care Medicine",
+        "year": 2022,
+        "pmid": "35010001",
+        "summary": "This review summarizes how telomere dysfunction shapes epithelial injury and fibrotic remodeling in idiopathic pulmonary fibrosis."
+      },
+      {
+        "title": "Targeting fibrotic remodeling programs in idiopathic pulmonary fibrosis",
+        "journal": "Nature Reviews Drug Discovery",
+        "year": 2023,
+        "pmid": "36420011",
+        "summary": "The paper maps fibrosis-remodeling pathways and highlights translational opportunities for mechanism-directed repurposing."
+      }
+    ],
+    "top_candidates": [
+      {
+        "drug_name": "IMETELSTAT",
+        "display_name": "Imetelstat",
+        "confidence": "medium",
+        "total_score": 72,
+        "literature_score": 20,
+        "mechanism_score": 19,
+        "clinical_score": 13,
+        "safety_score": 11,
+        "genetic_score": 9,
+        "why_candidate": "Imetelstat ranked highest because it connects telomerase biology to disease-linked telomere dysfunction while also intersecting fibrosis-remodeling pathways that matter in idiopathic pulmonary fibrosis.",
+        "mechanism_hypothesis": "A telomerase-directed intervention could be relevant in a biomarker-defined IPF subgroup with telomere-maintenance stress and progressive fibrotic remodeling.",
+        "testable_prediction": "If telomere-maintenance stress is part of the disease program in a selected subgroup, biomarker-linked epithelial stress signals should move in a favorable direction during experimental follow-up.",
+        "failure_mode": "The signal could fail if the apparent telomere link is only associative or if hematologic tolerability limits exposure before any fibrosis-relevant effect is measurable.",
+        "critical_test": "Validate subgroup selection with telomere-related biomarkers and check whether epithelial injury markers move before any clinical efficacy claim is considered.",
+        "novelty_basis": "This remains a repurposing signal rather than an established IPF asset, with the main novelty coming from telomere-maintenance biology.",
+        "evidence_basis": "indirect",
+        "genetic_tier": "Tier 2",
+        "candidate_role": "repurposing",
+        "known_disease_asset": false
+      }
+    ],
+    "early_stage_hypotheses": [
+      {
+        "drug_name": "Danazol",
+        "display_name": "Danazol",
+        "confidence": "low",
+        "total_score": 56,
+        "literature_score": 15,
+        "mechanism_score": 16,
+        "clinical_score": 9,
+        "safety_score": 8,
+        "genetic_score": 8,
+        "why_candidate": "Danazol remained as an early-stage hypothesis because telomere-length biology offers some interpretability, but disease-specific support for IPF is still limited.",
+        "mechanism_hypothesis": "An androgen-linked telomere-maintenance effect might justify exploratory follow-up in carefully selected telomere-dysfunction subgroups.",
+        "testable_prediction": "A biomarker-first translational study should clarify whether any telomere-linked signal exists before broader disease claims are made.",
+        "failure_mode": "The rationale may collapse if subgroup selection is weak or if the biology does not translate beyond inherited telomere syndromes.",
+        "critical_test": "Require disease-relevant biomarker stratification before any efficacy-oriented follow-up.",
+        "evidence_basis": "speculative",
+        "genetic_tier": "Tier 3",
+        "candidate_role": "repurposing",
+        "known_disease_asset": false
+      }
+    ],
+    "reviewed_signal_candidates": [],
+    "novel_candidates": [
+      {
+        "drug_name": "IMETELSTAT",
+        "display_name": "Imetelstat",
+        "confidence": "medium",
+        "novelty_class": "novel",
+        "novelty_basis": "The run did not find established IPF positioning for imetelstat, so the candidate is being treated as a cross-indication repurposing signal."
+      }
+    ],
+    "evidence_table": [
+      {
+        "drug_name": "IMETELSTAT",
+        "total_score": 72,
+        "confidence": "medium",
+        "literature_score": 20,
+        "mechanism_score": 19,
+        "clinical_score": 13,
+        "safety_score": 11,
+        "genetic_score": 9
+      },
+      {
+        "drug_name": "Danazol",
+        "total_score": 56,
+        "confidence": "low",
+        "literature_score": 15,
+        "mechanism_score": 16,
+        "clinical_score": 9,
+        "safety_score": 8,
+        "genetic_score": 8
+      }
+    ],
+    "deterministic_checks": {
+      "all_scores_valid": true,
+      "all_drugs_covered": true,
+      "evidence_score_checks": [
+        {
+          "drug_name": "IMETELSTAT",
+          "reported_score": 72
+        },
+        {
+          "drug_name": "Danazol",
+          "reported_score": 56
+        }
+      ],
+      "drug_coverage_checks": [
+        {
+          "drug_name": "IMETELSTAT",
+          "covered": true
+        },
+        {
+          "drug_name": "Danazol",
+          "covered": true
+        }
+      ]
+    }
+  }
+}

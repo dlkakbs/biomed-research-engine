@@ -1,0 +1,9 @@
+{
+  "jobId": "demo-ipf-001",
+  "diseaseName": "Idiopathic pulmonary fibrosis",
+  "rawQuery": "Idiopathic pulmonary fibrosis repurposing candidates targeting telomere-maintenance and fibrosis-remodeling biology",
+  "normalizedQuery": "idiopathic pulmonary fibrosis repurposing candidates targeting telomere-maintenance and fibrosis-remodeling biology",
+  "userType": "researcher",
+  "status": "Completed",
+  "budgetUnits": "5000000"
+}

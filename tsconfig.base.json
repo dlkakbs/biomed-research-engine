@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@biomed/shared": ["packages/shared/src/index.ts"],
+      "@biomed/db": ["packages/db/src/index.ts"],
+      "@biomed/payments": ["packages/payments/src/index.ts"],
+      "@biomed/gateway-seller": ["packages/gateway-seller/src/index.ts"],
+      "@biomed/orchestration": ["packages/orchestration/src/index.ts"],
+      "@biomed/agents": ["packages/agents/src/index.ts"]
+    },
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "dist"
+  }
+}
