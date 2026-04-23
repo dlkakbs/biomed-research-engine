@@ -73,11 +73,13 @@ Veliora solves this by combining an **agentic research workflow** with a **two-l
 
 This directly addresses the coordination problems in biomedical research workflows:
 
-- instead of bundling literature retrieval, DrugDB screening, pathway analysis, and review into one opaque service, Veliora breaks them into distinct workflow steps,
-- instead of forcing research into a subscription-style software model, Veliora supports **per-task** and **per-step** payment flows tied to the actual work performed,
-- instead of losing visibility across a fragmented pipeline, it keeps evidence collection and stage progression traceable,
-- instead of delivering unreviewed output, it inserts peer review before final delivery,
-- and instead of charging for weak or non-defensible results, it supports rejection and onchain refund behavior.
+| Workflow problem | How Veliora solves it |
+| --- | --- |
+| Research work is bundled into one opaque service | Veliora breaks literature retrieval, DrugDB screening, pathway analysis, and review into distinct workflow steps. |
+| Research pricing is forced into a subscription-style model | Veliora supports **per-task** and **per-step** payment flows tied to the actual work performed. |
+| Multi-stage execution loses visibility | Veliora keeps evidence collection and stage progression traceable across the workflow. |
+| Outputs can be delivered without review | Veliora inserts peer review before final delivery. |
+| Weak results can still be charged for | Veliora supports rejection and onchain refund behavior for non-defensible outputs. |
 
 In short, Veliora makes multi-step biomedical research economically practical.
 
