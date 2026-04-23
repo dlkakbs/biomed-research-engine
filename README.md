@@ -25,7 +25,7 @@ Veliora is a multi-agent biomedical research system that turns a disease-focused
 
 A user funds a research job in **USDC**, and the system coordinates specialist agents across literature mining, drug database screening, pathway analysis, hypothesis generation, evidence scoring, red-team review, and final report synthesis.
 
-The result is a **research brief**, not a treatment recommendation.
+The result is a **research brief**, not a medical advice.
 
 Veliora is intentionally selective:
 - it may return a strong shortlist,
@@ -300,7 +300,7 @@ Veliora evaluates outputs across:
 - safety profile  
 - genetic context  
 
-Outputs are **research prioritization artifacts**, not medical advice.
+Outputs are **research prioritization artifacts**
 
 Full rubric: [REPORT_QUALITY_RUBRIC.md](REPORT_QUALITY_RUBRIC.md)
 
