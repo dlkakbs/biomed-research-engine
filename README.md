@@ -191,7 +191,7 @@ sequenceDiagram
 
     J->>P: job funded
     P->>S: request research action
-    S-->>P: 402 Payment Required
+    S-->>P: x402 Payment Required
     P->>S: replay with payment proof
 
     P->>R: submit report
