@@ -230,7 +230,8 @@ sequenceDiagram
   Uses **ChEMBL** for molecule, target, and activity-linked candidate context.
 
 - **Pathway**  
-  Uses **Open Targets** plus linked pathway, genetic, and active clinical-trial context.
+  Uses **Open Targets** plus linked pathway, genetic, and active clinical-trial context, including **ClinicalTrials.gov** references where available.
+
 
 ---
 
@@ -262,7 +263,7 @@ Flow:
 4. replay with payment  
 5. batched settlement on Arc  
 
-**Default price:** `0.002 USDC` per action  
+**Price:** `0.002 USDC` per action  
 
 ---
 
