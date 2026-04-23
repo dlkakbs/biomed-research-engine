@@ -69,7 +69,7 @@ Veliora solves this by combining an **agentic research workflow** with a **two-l
 - **ERC-8183 on Arc** manages the outer job lifecycle:
   create, fund, submit, complete, or reject.
 - **x402 + Circle Gateway** handle low-value paid research actions inside the workflow.
-- **Arc** provides fast finality and a USDC-native coordination layer.
+- **Arc** provides fast finality and a USDC-native settlement layer.
 
 This directly addresses the coordination problems in biomedical research workflows:
 
@@ -278,7 +278,7 @@ That separation is important because each payment path solves a different econom
 
 ### Blockchain / Settlement
 - **Arc**  
-  Fast finality and USDC-native coordination
+  Fast finality and a USDC-native settlement layer
 - **ERC-8183**  
   Job escrow and resolution lifecycle
 - **USDC**  
@@ -439,6 +439,6 @@ Veliora is a payment-aware, multi-agent biomedical research pipeline for drug re
 It combines:
 - **ERC-8183** for escrowed research jobs,
 - **x402 + Circle Gateway** for paid low-value research actions,
-- and **Arc** for final settlement and coordination.
+- and **Arc** for final settlement.
 
 The result is a system that can gather evidence, review it, and either deliver a structured brief or reject the run and refund the user.
