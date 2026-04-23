@@ -205,6 +205,29 @@ sequenceDiagram
 | Report | Final synthesis |
 | Reviewers | Approval / rejection |
 
+### Data Sources by Agent
+
+- **Literature**  
+  Uses **PubMed / NCBI** for paper retrieval, **PubMed Central** when full-text artifacts are available, and **OpenAlex** for citation enrichment and ranking context.
+
+- **DrugDB**  
+  Uses **ChEMBL** for molecule, target, and activity-linked candidate context.
+
+- **Pathway**  
+  Uses **Open Targets** plus linked pathway, genetic, and active clinical-trial context.
+
+- **Repurposing**  
+  Generates hypotheses over the combined literature, drug, and pathway outputs.
+
+- **Evidence**  
+  Scores and prioritizes aggregated candidate evidence from the upstream stages.
+
+- **Red Team**  
+  Acts as an independent challenge layer for reportable candidates when a scored shortlist exists.
+
+- **Report**  
+  Synthesizes upstream outputs into a structured research brief with provenance and delivery framing.
+
 ---
 
 ## Payment Architecture
