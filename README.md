@@ -172,7 +172,7 @@ Veliora operates across three layers:
   PI agent orchestrates research across literature, DrugDB, pathway, repurposing, evidence, and review  
 
 - **Resolution Layer**  
-  Finalizer completes or rejects the job and triggers settlement or refund  
+  Evaluator completes or rejects the job and triggers settlement or refund  
 
 ### Sequence Diagram
 
@@ -183,7 +183,7 @@ sequenceDiagram
     participant P as PI Agent
     participant S as Paid Research Services
     participant R as Peer Review
-    participant F as Finalizer
+    participant F as Evaluator
 
     U->>J: createJob
     P->>J: setBudget
@@ -242,7 +242,7 @@ Veliora separates payments into three layers:
 ### 1. Job Escrow (ERC-8183)
 
 - Client funds job in USDC  
-- Finalizer completes or rejects  
+- Evaluator completes or rejects  
 - Approved jobs trigger settlement  
 - Rejected jobs are refunded  
 
