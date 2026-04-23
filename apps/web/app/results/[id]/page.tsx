@@ -293,7 +293,7 @@ function humanizeMethodologyText(value?: string, report?: any) {
       '- In this run, no candidates advanced into formal scoring because no shortlist cleared the stronger candidate threshold.',
       '',
       'Limitations',
-      '- These reviewed signals are exploratory only. They were retained because some mechanism-linked evidence existed, but the support was too weak for a reportable candidate or formal early-stage hypothesis.',
+      '- These pipeline-reviewed signals are exploratory only. They were retained because some mechanism-linked evidence existed, but the support was too weak for a reportable candidate or formal early-stage hypothesis.',
       '- Genetic evidence was used as disease-biology context rather than causal proof, and the report does not claim target validation or treatment benefit.',
     ].join('\n');
   }
@@ -1063,7 +1063,7 @@ function ReviewedSignalCard({ c }: { c: any }) {
               </span>
             ) : null}
             <span className="text-[11px] px-2.5 py-0.5 rounded-full border border-slate-700 bg-slate-900/70 text-slate-300 font-medium">
-              reviewed signal
+              pipeline-reviewed signal
             </span>
           </div>
           {c.evidence_trace ? (
@@ -1079,7 +1079,7 @@ function ReviewedSignalCard({ c }: { c: any }) {
           <NarrativeBlock text={whyReviewed} />
         </div>
         <div className="border-l-2 border-rose-900/60 pl-3">
-          <p className={`${SECTION_LABEL} mb-1`}>Why It Did Not Advance</p>
+          <p className={`${SECTION_LABEL} mb-1`}>Why It Was Held Back</p>
           <NarrativeBlock text={whyHeldBack} />
         </div>
         {nextCheck ? (
@@ -1806,7 +1806,7 @@ export default function ResultsPage() {
                 <>
                   {reviewedSignals.length > 0 && (
                     <p className={BODY_TEXT}>
-                      These were mechanism-linked leads reviewed in this run. They are shown as early signals that were examined before the workflow stopped, not as a final shortlist.
+                      These were pipeline-reviewed mechanism-linked leads. They were examined during literature, drug, pathway, and evidence scoring, but did not reach a final shortlist.
                     </p>
                   )}
                   {[...reviewedSignals].sort(byConfidence).map((c: any) => (
