@@ -4,8 +4,11 @@ Agentic biomedical research workflow for drug repurposing analysis, powered by p
 
 Built for the **Agentic Economy on Arc Hackathon**  
 Categories:
-- Usage-Based Compute Billing
-- Real-Time Micro-Commerce Flow
+
+| Category |
+| --- |
+| Usage-Based Compute Billing |
+| Real-Time Micro-Commerce Flow |
 
 ---
 
@@ -18,9 +21,12 @@ A user funds a research job in **USDC**, and the system coordinates multiple spe
 The result is a **research brief**, not a treatment recommendation.
 
 Veliora is designed to be selective:
-- it may return a strong shortlist,
-- a weaker exploratory hypothesis,
-- or no deliverable at all.
+
+| Output possibility |
+| --- |
+| it may return a strong shortlist, |
+| a weaker exploratory hypothesis, |
+| or no deliverable at all. |
 
 If the output does not pass review, the job is rejected and the escrow is refunded onchain.
 
@@ -30,18 +36,23 @@ If the output does not pass review, the job is rejected and the escrow is refund
 
 Biomedical research workflows are expensive to coordinate because they are made up of many small, specialized steps such as:
 
-- retrieving and filtering literature,
-- screening candidate drugs and targets,
-- anchoring candidates to disease biology,
-- scoring evidence quality,
-- and running independent review.
+| Step |
+| --- |
+| retrieving and filtering literature, |
+| screening candidate drugs and targets, |
+| anchoring candidates to disease biology, |
+| scoring evidence quality, |
+| and running independent review. |
 
 These steps are often too fragmented for traditional payment rails.
 
 Paying for each small research action individually is usually:
-- operationally heavy,
-- too expensive for low-value actions,
-- and difficult to audit across a multi-stage workflow.
+
+| Constraint |
+| --- |
+| operationally heavy, |
+| too expensive for low-value actions, |
+| and difficult to audit across a multi-stage workflow. |
 
 As a result, it is hard to build a research pipeline where many agents or services can be paid fairly and efficiently per action.
 
@@ -51,17 +62,21 @@ As a result, it is hard to build a research pipeline where many agents or servic
 
 Veliora solves this by combining an **agentic research workflow** with a **two-layer payment architecture**:
 
-- **ERC-8183 on Arc** manages the outer job lifecycle:
-  create, fund, submit, complete, or reject.
-- **x402 + Circle Gateway** handle low-value paid research actions inside the workflow.
-- **Arc** provides fast finality and a USDC-native coordination layer.
+| Layer | Description |
+| --- | --- |
+| **ERC-8183 on Arc** | manages the outer job lifecycle: create, fund, submit, complete, or reject. |
+| **x402 + Circle Gateway** | handle low-value paid research actions inside the workflow. |
+| **Arc** | provides fast finality and a USDC-native coordination layer. |
 
 This lets Veliora support:
-- escrowed research jobs,
-- paid per-step external services,
-- traceable evidence collection,
-- peer review before delivery,
-- and refund-on-rejection behavior.
+
+| Capability |
+| --- |
+| escrowed research jobs, |
+| paid per-step external services, |
+| traceable evidence collection, |
+| peer review before delivery, |
+| and refund-on-rejection behavior. |
 
 In short, Veliora makes multi-step biomedical research economically practical.
 
@@ -86,14 +101,11 @@ The workflow then:
 
 ### Example output behavior
 
-- **Strong evidence + review approval**  
-  A report is delivered and the job is completed.
-
-- **Weak but still interesting signal**  
-  A report may still be delivered, but clearly labeled as exploratory.
-
-- **No defensible signal**  
-  The job is rejected and the client escrow is refunded.
+| Scenario | Outcome |
+| --- | --- |
+| **Strong evidence + review approval** | A report is delivered and the job is completed. |
+| **Weak but still interesting signal** | A report may still be delivered, but clearly labeled as exploratory. |
+| **No defensible signal** | The job is rejected and the client escrow is refunded. |
 
 ---
 
@@ -122,8 +134,8 @@ PI Agent / Orchestrator (Dr. Iris)
   +--> Literature Agent / Seller
   +--> DrugDB Agent / Seller
   +--> Pathway Agent / Seller
-  +--> Internal Repurposing 
-  +--> Internal Evidence Scoring 
+  +--> Internal Repurposing
+  +--> Internal Evidence Scoring
   +--> Red-Team Agent / Seller
   +--> Internal Report Synthesis
   +--> Review Agent / Seller
@@ -139,32 +151,17 @@ Finalizer
 
 ### Agent roles
 
-- **Dr. Iris · PI Agent**  
-  Orchestrates the workflow, manages paid service calls, tracks progress, and handles submission or rejection.
-
-- **Dr. Mira · Literature**  
-  Mines and prioritizes literature evidence.
-
-- **Dr. Rex · DrugDB**  
-  Screens drug, target, and candidate-molecule context.
-
-- **Dr. Nova · Pathway**  
-  Anchors the analysis in disease biology.
-
-- **Dr. Spark · Repurposing**  
-  Generates and filters candidate hypotheses.
-
-- **Dr. Vera · Evidence**  
-  Scores evidence across literature, biology, clinical signal, safety, and genetics.
-
-- **Dr. Vale · Red Team**  
-  Performs adversarial review and surfaces weaknesses.
-
-- **Dr. Aria · Report**  
-  Produces the final research brief.
-
-- **Review I / Review II / Tiebreak**  
-  Final peer-review layer that determines approval or rejection.
+| Agent | Role |
+| --- | --- |
+| **Dr. Iris · PI Agent** | Orchestrates the workflow, manages paid service calls, tracks progress, and handles submission or rejection. |
+| **Dr. Mira · Literature** | Mines and prioritizes literature evidence. |
+| **Dr. Rex · DrugDB** | Screens drug, target, and candidate-molecule context. |
+| **Dr. Nova · Pathway** | Anchors the analysis in disease biology. |
+| **Dr. Spark · Repurposing** | Generates and filters candidate hypotheses. |
+| **Dr. Vera · Evidence** | Scores evidence across literature, biology, clinical signal, safety, and genetics. |
+| **Dr. Vale · Red Team** | Performs adversarial review and surfaces weaknesses. |
+| **Dr. Aria · Report** | Produces the final research brief. |
+| **Review I / Review II / Tiebreak** | Final peer-review layer that determines approval or rejection. |
 
 ---
 
@@ -173,16 +170,21 @@ Finalizer
 Veliora uses **two distinct payment layers**.
 
 ### 1) External service payments
+
 Handled through **x402 + Circle Gateway**
 
 The PI agent pays for external research actions such as:
-- literature retrieval,
-- DrugDB screening,
-- pathway analysis,
-- red-team review,
-- evaluator review.
+
+| External research action |
+| --- |
+| literature retrieval, |
+| DrugDB screening, |
+| pathway analysis, |
+| red-team review, |
+| evaluator review. |
 
 Flow:
+
 1. request paid resource,
 2. receive `402 Payment Required`,
 3. sign Circle Gateway authorization,
@@ -192,21 +194,31 @@ Flow:
 This makes low-value research actions economically feasible.
 
 **Configured default nanopayment:**  
-- `0.002 USDC` per paid action
+
+| Amount |
+| --- |
+| `0.002 USDC` per paid action |
 
 ### 2) Internal budget distribution
+
 Handled after successful completion
 
 Once a report is approved and the job is completed onchain, budget can be distributed internally to downstream agents such as:
-- repurposing,
-- evidence,
-- report.
+
+| Downstream agent |
+| --- |
+| repurposing, |
+| evidence, |
+| report. |
 
 These payouts are computed using:
-- base cost,
-- contribution weight,
-- risk weight,
-- payout weight.
+
+| Input |
+| --- |
+| base cost, |
+| contribution weight, |
+| risk weight, |
+| payout weight. |
 
 This is separate from the x402 seller payment layer.
 
@@ -215,34 +227,41 @@ This is separate from the x402 seller payment layer.
 ## Tech Stack
 
 ### Blockchain / Settlement
-- **Arc**  
-  Fast finality and USDC-native coordination
-- **ERC-8183**  
-  Job escrow and resolution lifecycle
-- **USDC**  
-  Funding and settlement currency
+
+| Component | Purpose |
+| --- | --- |
+| **Arc** | Fast finality and USDC-native coordination |
+| **ERC-8183** | Job escrow and resolution lifecycle |
+| **USDC** | Funding and settlement currency |
 
 ### Payment Infrastructure
-- **Circle Gateway**  
-  Gasless authorization and batched nanopayment settlement
-- **x402**  
-  Paid API-style access to research actions
+
+| Component | Purpose |
+| --- | --- |
+| **Circle Gateway** | Gasless authorization and batched nanopayment settlement |
+| **x402** | Paid API-style access to research actions |
 
 ### Research Workflow
-- Multi-agent orchestration
-- Literature mining
-- Drug database screening
-- Pathway analysis
-- Hypothesis generation
-- Evidence scoring
-- Red-team review
-- Final report synthesis
+
+| Capability |
+| --- |
+| Multi-agent orchestration |
+| Literature mining |
+| Drug database screening |
+| Pathway analysis |
+| Hypothesis generation |
+| Evidence scoring |
+| Red-team review |
+| Final report synthesis |
 
 ### Output / Evaluation Layer
-- Peer review
-- Delivery gating
-- Refund-on-rejection logic
-- Structured research brief generation
+
+| Capability |
+| --- |
+| Peer review |
+| Delivery gating |
+| Refund-on-rejection logic |
+| Structured research brief generation |
 
 ---
 
@@ -250,33 +269,31 @@ This is separate from the x402 seller payment layer.
 
 Veliora uses a structured evidence rubric across:
 
-- literature support,
-- biology overlap,
-- clinical evidence,
-- safety profile,
-- genetic context.
+| Evidence dimension |
+| --- |
+| literature support, |
+| biology overlap, |
+| clinical evidence, |
+| safety profile, |
+| genetic context. |
 
 Genetic evidence is used as disease-biology context, not as causal proof or medical validation.
 
 Outputs are **research prioritization artifacts**, not medical advice.
 
-The full evaluation criteria and scoring thresholds are defined in [REPORT_QUALITY_RUBRIC.md].
+The full evaluation criteria and scoring thresholds are defined in [REPORT_QUALITY_RUBRIC.md](/Users/dilekakbas/Desktop/biomed-research/REPORT_QUALITY_RUBRIC.md:1).
+
 ---
 
 ## Report Policy
 
 Veliora is intentionally selective.
 
-### Deliverable
-- A reportable shortlist exists
-
-### Conditionally deliverable
-- Only an early-stage hypothesis exists, but it is clearly labeled as exploratory
-
-### Reject
-- No reportable candidate
-- No meaningful early-stage hypothesis
-- Review does not approve the report
+| Status | Criteria |
+| --- | --- |
+| Deliverable | A reportable shortlist exists |
+| Conditionally deliverable | Only an early-stage hypothesis exists, but it is clearly labeled as exploratory |
+| Reject | No reportable candidate<br>No meaningful early-stage hypothesis<br>Review does not approve the report |
 
 If rejected, the escrow is refunded onchain.
 
@@ -286,11 +303,13 @@ If rejected, the escrow is refunded onchain.
 
 Veliora demonstrates that biomedical research workflows can be:
 
-- modular,
-- agent-driven,
-- economically coordinated,
-- payment-aware,
-- and auditable end to end.
+| Property |
+| --- |
+| modular, |
+| agent-driven, |
+| economically coordinated, |
+| payment-aware, |
+| and auditable end to end. |
 
 Instead of treating research as a single opaque service, Veliora breaks it into specialized paid actions while preserving delivery control, review quality, and settlement logic.
 
@@ -303,10 +322,11 @@ This makes it a strong example of how agentic systems can support real-world, lo
 Veliora is a payment-aware, multi-agent biomedical research pipeline for drug repurposing analysis.
 
 It combines:
-- **ERC-8183** for escrowed research jobs,
-- **x402 + Circle Gateway** for paid low-value research actions,
-- and **Arc** for final settlement and coordination.
+
+| Component | Role |
+| --- | --- |
+| **ERC-8183** | for escrowed research jobs, |
+| **x402 + Circle Gateway** | for paid low-value research actions, |
+| **Arc** | for final settlement and coordination. |
 
 The result is a system that can gather evidence, review it, and either deliver a structured brief or reject the run and refund the user.
-
-
