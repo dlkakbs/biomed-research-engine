@@ -169,7 +169,7 @@ Veliora operates across three layers:
   Job creation, USDC approval, and escrow funding via ERC-8183 on Arc  
 
 - **Execution Layer**  
-  PI agent orchestrates research across literature, DrugDB, pathway, repurposing, evidence, and review  
+   PI agent orchestrates the funded workflow across literature, DrugDB, pathway, repurposing, evidence, red-team critique, report synthesis, and peer review.
 
 - **Resolution Layer**  
   Evaluator completes or rejects the job and triggers settlement or refund  
