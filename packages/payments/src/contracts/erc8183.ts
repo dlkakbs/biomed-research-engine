@@ -195,12 +195,14 @@ export async function inspectErc8183SignerConfig(): Promise<{
     configuredAddress: string | null;
     circleAddress: string | null;
     matchesConfiguredAddress: boolean | null;
+    lookupError: string | null;
   };
   evaluator: {
     walletId: string | null;
     configuredAddress: string | null;
     circleAddress: string | null;
     matchesConfiguredAddress: boolean | null;
+    lookupError: string | null;
   };
 }> {
   const client = createCircleClient();
@@ -213,13 +215,29 @@ export async function inspectErc8183SignerConfig(): Promise<{
     process.env.FINALIZER_ADDRESS?.trim() ||
     null;
 
-  const [piWallet, evaluatorWallet] = await Promise.all([
-    piWalletId ? client.getWallet(piWalletId).catch(() => null) : Promise.resolve(null),
-    evaluatorWalletId ? client.getWallet(evaluatorWalletId).catch(() => null) : Promise.resolve(null)
+  const [piWalletResult, evaluatorWalletResult] = await Promise.all([
+    piWalletId
+      ? client
+          .getWallet(piWalletId)
+          .then((wallet) => ({ wallet, error: null as string | null }))
+          .catch((error: unknown) => ({
+            wallet: null,
+            error: error instanceof Error ? error.message : "unknown"
+          }))
+      : Promise.resolve({ wallet: null, error: null as string | null }),
+    evaluatorWalletId
+      ? client
+          .getWallet(evaluatorWalletId)
+          .then((wallet) => ({ wallet, error: null as string | null }))
+          .catch((error: unknown) => ({
+            wallet: null,
+            error: error instanceof Error ? error.message : "unknown"
+          }))
+      : Promise.resolve({ wallet: null, error: null as string | null })
   ]);
 
-  const piCircleAddress = piWallet?.address?.trim() || null;
-  const evaluatorCircleAddress = evaluatorWallet?.address?.trim() || null;
+  const piCircleAddress = piWalletResult.wallet?.address?.trim() || null;
+  const evaluatorCircleAddress = evaluatorWalletResult.wallet?.address?.trim() || null;
 
   return {
     pi: {
@@ -229,7 +247,8 @@ export async function inspectErc8183SignerConfig(): Promise<{
       matchesConfiguredAddress:
         piConfiguredAddress && piCircleAddress
           ? piConfiguredAddress.toLowerCase() === piCircleAddress.toLowerCase()
-          : null
+          : null,
+      lookupError: piWalletResult.error
     },
     evaluator: {
       walletId: evaluatorWalletId,
@@ -238,7 +257,8 @@ export async function inspectErc8183SignerConfig(): Promise<{
       matchesConfiguredAddress:
         evaluatorConfiguredAddress && evaluatorCircleAddress
           ? evaluatorConfiguredAddress.toLowerCase() === evaluatorCircleAddress.toLowerCase()
-          : null
+          : null,
+      lookupError: evaluatorWalletResult.error
     }
   };
 }
