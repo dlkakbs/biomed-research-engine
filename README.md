@@ -254,7 +254,7 @@ Used during execution for:
 - literature retrieval  
 - DrugDB queries  
 - pathway analysis  
-- critics/review steps  
+- critique/review steps  
 
 Flow:
 1. request resource  
@@ -277,6 +277,18 @@ Flow:
 
 ## Tech Stack
 
+### Web Application
+
+- **Next.js**
+- **TypeScript**
+
+### Backend / Deployment
+
+- **Node.js**
+- **SQLite**
+- **Vercel**
+- **Railway**
+
 ### Blockchain / Settlement
 - **Arc**  
   Fast finality and a USDC-native settlement layer  
@@ -286,21 +298,12 @@ Flow:
   Funding and settlement currency  
 
 ### Payment Infrastructure
+- **Circle Wallets**  
+  Developer-controlled wallets for role-based wallet operations  
 - **Circle Gateway**  
   Gasless authorization and batched nanopayment settlement  
 - **x402**  
   Paid API-style access to research actions  
-
-### Workflow
-- Multi-agent orchestration  
-- Literature mining  
-- Drug database screening  
-- Pathway analysis  
-- Hypothesis generation  
-- Evidence scoring 
-- Red-team critics
-- Report synthesis
-- Peer review 
 
 ---
 
