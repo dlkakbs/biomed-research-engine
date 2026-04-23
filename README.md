@@ -107,13 +107,13 @@ A user submits a disease-focused request, such as:
 
 The system:
 
-1. creates and funds a job in USDC  
-2. dispatches specialist agents  
-3. executes paid research steps  
-4. generates and scores hypotheses  
-5. runs adversarial review  
-6. produces a research brief  
-7. delivers or rejects the result  
+1. creates and funds a job in USDC
+2. dispatches specialist agents
+3. executes paid research steps
+4. gathers and scores candidate evidence
+5. challenges reportable candidates when a scored shortlist is available
+6. assembles the final research brief and review outcome
+7. delivers a shortlist, surfaces exploratory signals, or rejects the run
 
 ### Output behavior
 
