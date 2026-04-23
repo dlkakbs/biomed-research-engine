@@ -267,7 +267,7 @@ Flow:
 
 **Price:** `0.002 USDC` per action  
 
-- Design note: Repurposing, evidence scoring, and report synthesis remain in the core orchestration layer.
+- Repurposing, evidence scoring, and report synthesis remain in the core orchestration layer.
 
 ---
 
