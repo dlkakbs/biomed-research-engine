@@ -46,6 +46,14 @@ function getRequiredEnv(name: string): string {
   return value;
 }
 
+function getFirstPresentEnv(...names: string[]): string {
+  for (const name of names) {
+    const value = process.env[name]?.trim();
+    if (value) return value;
+  }
+  throw new Error(`${names.join(" or ")} is required for Circle wallet operations`);
+}
+
 function createIdempotencyKey(): string {
   return crypto.randomUUID();
 }
@@ -106,7 +114,7 @@ export class CircleWalletClient {
 
   static fromEnv(): CircleWalletClient {
     return new CircleWalletClient({
-      apiKey: getRequiredEnv("CIRCLE_API_KEY"),
+      apiKey: getFirstPresentEnv("CIRCLE_API_KEY_DIRECT", "CIRCLE_API_KEY"),
       entitySecret: getRequiredEnv("CIRCLE_ENTITY_SECRET"),
       baseUrl: process.env.CIRCLE_BASE_URL || DEFAULT_CIRCLE_BASE_URL
     });
