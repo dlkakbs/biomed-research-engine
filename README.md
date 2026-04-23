@@ -67,7 +67,7 @@ Biomedical research workflows are composed of many specialized steps:
 These steps are difficult to coordinate economically.
 
 Traditional payment systems:
-- make small research actions too expensive,
+- make research actions too expensive,
 - bundle work into opaque services,
 - and provide limited visibility into multi-stage workflows.
 
