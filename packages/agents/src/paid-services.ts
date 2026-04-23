@@ -1,6 +1,9 @@
 import { CircleWalletClient, requestPaidService } from "@biomed/payments";
 
-const DEFAULT_API_URL = process.env.API_URL || "http://localhost:3001";
+const DEFAULT_API_URL =
+  process.env.API_URL_DIRECT ||
+  process.env.API_URL ||
+  "http://localhost:3001";
 
 export interface LiteratureSearchRequest {
   query: string;
