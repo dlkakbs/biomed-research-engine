@@ -4,10 +4,23 @@ Agentic biomedical research workflow for drug repurposing analysis, powered by p
 
 ![Veliora cover](docs/assets/veliora-cover-v5.png)
 
-Built for the **Agentic Economy on Arc Hackathon**  
-Categories:
-- Usage-Based Compute Billing
-- Real-Time Micro-Commerce Flow
+Built for the Agentic Economy on Arc Hackathon
+## Categories:
+
+### Usage-Based Compute Billing
+
+- Per-step paid research actions
+- Pricing tied to actual execution
+
+### Real-Time Micro-Commerce Flow
+
+- Payments are triggered dynamically during the workflow
+- Economic activity is driven by task progression
+
+### Agent-to-Agent Payment Loop
+
+- Agents coordinate funded actions across the workflow
+- Machine-to-machine value flow follows task progression
 
 ---
 
@@ -322,21 +335,6 @@ Veliora is intentionally selective.
 
 Rejected jobs are refunded onchain.
 
----
-
-## Hackathon Alignment
-
-### Usage-Based Compute Billing
-- Per-step paid research actions  
-- Pricing tied to actual execution  
-
-### Real-Time Micro-Commerce Flow
-- Agents trigger payments dynamically  
-- Workflow drives economic activity  
-
-### Additional
-- Agent-to-agent payment loops  
-- Per-API monetization model  
 
 ---
 
