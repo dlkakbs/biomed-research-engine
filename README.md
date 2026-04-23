@@ -184,7 +184,7 @@ Used during execution for:
 - literature retrieval  
 - DrugDB queries  
 - pathway analysis  
-- review steps  
+- critics/review steps  
 
 Flow:
 1. request resource  
@@ -227,8 +227,10 @@ Flow:
 - Drug database screening  
 - Pathway analysis  
 - Hypothesis generation  
-- Evidence scoring  
-- Red-team review  
+- Evidence scoring 
+- Red-team critics
+- Report synthesis
+- Peer review 
 
 ---
 
