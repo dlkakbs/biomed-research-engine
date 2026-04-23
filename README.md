@@ -181,28 +181,30 @@ sequenceDiagram
     participant U as Client Wallet
     participant J as ERC-8183 Job on Arc
     participant P as PI Agent
-    participant S as Paid Research Services
-    participant R as Peer Review
-    participant F as Evaluator
+    participant S as Paid Research Actions
+    participant E as Evaluator
 
     U->>J: createJob
     P->>J: setBudget
     U->>J: approve + fund
 
     J->>P: job funded
-    P->>S: request research action
-    S-->>P: x402 Payment Required
+    P->>S: request paid research action
+    S-->>P: 402 Payment Required
     P->>S: replay with payment proof
+    S-->>P: verified response
 
-    P->>R: submit report
-    R-->>F: approve or reject
+    P->>E: submit for evaluation
+    E-->>P: approve or reject
 
     alt approved
-        F->>J: complete
+        E->>J: complete
     else rejected
-        F->>J: reject
+        E->>J: reject
     end
 ```
+
+Paid research actions cover literature, DrugDB, pathway, red-team critique, and peer review, while repurposing, evidence scoring, and report synthesis remain in the PI-led core orchestration layer.
 
 ### Agent Roles
 
