@@ -36,22 +36,13 @@ Built for the Agentic Economy on Arc Hackathon
 
 Veliora is a multi-agent biomedical research system that turns a disease-focused query into a structured repurposing analysis workflow.
 
-A user funds a research job in **USDC**, and the PI agent coordinates specialist agents across literature mining, drug database screening, pathway analysis, hypothesis generation, evidence scoring, report synthesis, and review. 
+A user funds a research job in **USDC**, and the PI agent coordinates specialist agents across literature mining, drug database screening, pathway analysis, hypothesis generation, evidence scoring, critique, report synthesis, and review. 
 
 The result is a comprehensive **research brief**.
 
-Veliora is intentionally selective:
-- it may return a strong shortlist,
-- a weaker exploratory hypothesis,
-- pipeline-reviewed signals that did not advance into a scored shortlist,
-- or no deliverable at all.
+Arc provides the escrow and settlement layer, while x402 and Circle Gateway enable paid access to external services through on-demand payment flows, without interrupting the core agent orchestration.
 
-Two output types should be read differently:
-
-- **Pipeline-reviewed signals**  
-  Early mechanism-linked leads examined by the core workflow across literature, drug, pathway, and evidence scoring. These are exploratory and are not the same as a final shortlist.
-- **Red-team challenged candidates**  
-  Stronger reportable candidates that advanced far enough to be stress-tested by the red-team layer before delivery.
+This transforms fragmented research steps into a coordinated, economically structured workflow, where agent-to-agent interactions follow task progression and outputs remain fully traceable.
 
 ---
 
@@ -68,7 +59,7 @@ These steps are difficult to coordinate economically.
 
 Traditional payment systems:
 - make research actions too expensive,
-- bundle work into opaque services,
+- bundle work into opaque ervices,
 - and provide limited visibility into multi-stage workflows.
 
 This makes it hard to build modular, auditable, and fairly priced research pipelines.
@@ -350,14 +341,18 @@ Veliora is intentionally selective.
 - strong shortlist exists  
 
 ### Conditional deliver
-- exploratory hypothesis  
+- exploratory hypothesis / pipeline-reviewed signals that did not advance into a scored shortlist,
+
+- **Pipeline-reviewed signals**  
+  Early mechanism-linked leads examined by the core workflow across literature, drug, pathway, and evidence scoring. These are exploratory and are not the same as a final shortlist.
+- **Red-team challenged candidates**  
+  Stronger reportable candidates that advanced far enough to be stress-tested by the red-team layer before delivery.  
 
 ### Reject
 - no defensible signal  
 - review fails  
 
 Rejected jobs are refunded onchain.
-
 
 ---
 
