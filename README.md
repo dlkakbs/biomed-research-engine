@@ -19,8 +19,8 @@ Built for the Agentic Economy on Arc Hackathon
 
 ### Agent-to-Agent Payment Loop
 
-- Agents coordinate funded actions across the workflow
-- Machine-to-machine value flow follows task progression
+- The PI agent coordinates paid actions across the workflow
+- Machine-to-machine payment flows follow task progression
 
 ---
 
@@ -34,15 +34,15 @@ Built for the Agentic Economy on Arc Hackathon
 
 ## Overview
 
-Veliora is a multi-agent biomedical research system that turns a disease-focused query into a structured repurposing analysis workflow.
+Veliora is a multi-agent biomedical research system that turns a disease-focused query into a structured repurposing workflow.
 
-A user funds a research job in **USDC**, and the PI agent coordinates specialist agents across literature mining, drug database screening, pathway analysis, hypothesis generation, evidence scoring, critique, report synthesis, and review. 
+A user funds a research job in **USDC**, and the PI agent coordinates specialist agents across literature mining, drug database screening, pathway analysis, hypothesis generation, evidence scoring, conditional critique, report synthesis, and review.
 
-The result is a comprehensive **research brief**.
+The result is a structured **research brief** that may surface reportable candidates, exploratory hypotheses, or pipeline-reviewed signals, depending on the strength of the run.
 
-Arc provides the escrow and settlement layer, while x402 and Circle Gateway enable paid access to external services through on-demand payment flows, without interrupting the core agent orchestration.
+Arc provides the escrow and settlement layer, while x402 and Circle Gateway enable paid access to external services through on-demand payment flows without interrupting the core agent orchestration.
 
-This transforms fragmented research steps into a coordinated, economically structured workflow, where agent-to-agent interactions follow task progression and outputs remain fully traceable.
+This turns fragmented research steps into a coordinated, economically structured workflow, where agent-to-agent actions follow task progression and outputs remain traceable.
 
 ---
 
@@ -72,15 +72,15 @@ Veliora combines an **agentic research workflow** with a **multi-layer payment s
 
 - **ERC-8183 on Arc** → job escrow, lifecycle, and resolution  
 - **x402 + Circle Gateway** → per-step paid research/review actions  
-- **Arc** → fast finality and a USDC-native settlement layer  
+- **Arc** → deterministic sub-second finality with USDC-denominated fees and settlement
 
 This enables:
 
-- escrowed research jobs  
-- per-action paid services  
-- traceable workflow execution  
-- peer-reviewed delivery  
-- rejection + refund for weak outputs  
+- escrowed research jobs
+- conditional paid research and review actions
+- traceable workflow execution
+- peer-reviewed delivery
+- rejection + refund for non-deliverable outputs
 
 Veliora turns fragmented research steps into a coordinated, economically viable system.
 
@@ -207,7 +207,7 @@ Paid actions cover literature, DrugDB, pathway, red-team critique, and peer revi
 | Pathway     | Anchors disease biology through pathway, genetic, and clinical trial context       |
 | Repurposing | Generates candidate hypotheses from upstream evidence                              |
 | Evidence    | Scores and prioritizes the strongest candidate signals                             |
-| Red Team    | Challenges shortlisted candidates once a scored list is available                  |
+| Red Team    | Challenges shortlist candidates for risk and confounders                  |
 | Report      | Synthesizes findings into a structured research brief                              |
 | Reviewer I  | Verifies methodology, provenance, and report completeness                          |
 | Reviewer II | Checks consistency across candidate, evidence, and scoring fields                  |
@@ -291,21 +291,24 @@ https://testnet.arcscan.app/address/0x99f89acf1a0dB9665452A8fA5b50c43757E320A1?t
 
 - **Next.js**
 - **TypeScript**
+- **Wagmi**
+- **Viem**
 
 ### Backend / Deployment
 
 - **Node.js**
+- **Express**
 - **SQLite**
 - **Vercel**
 - **Railway**
 
 ### Blockchain / Settlement
-- **Arc**  
-  Fast finality and a USDC-native settlement layer  
-- **ERC-8183**  
-  Job escrow and resolution lifecycle
+- **Arc**
+Deterministic-finality L1 with USDC-denominated fees and settlement
+- **ERC-8183**
+Job escrow, submission, and evaluator-based resolution lifecycle
 - **USDC**
-  The currency
+Funding and settlement asset used across job escrow and paid workflow actions
 
 ### Payment Infrastructure
 - **Circle Wallets**  
@@ -313,7 +316,13 @@ https://testnet.arcscan.app/address/0x99f89acf1a0dB9665452A8fA5b50c43757E320A1?t
 - **Circle Gateway**  
   Gasless authorization and batched nanopayment settlement  
 - **x402**  
-  Paid API-style access to research actions  
+  Payment-gated access to research/review actions
+
+### AI / Agent Orchestration
+- **OpenRouter**
+LLM inference for agent stages
+- **Custom multi-agent pipeline**
+Project-specific orchestration across the end-to-end research workflow
 
 ---
 
@@ -341,12 +350,12 @@ Veliora is intentionally selective.
 - strong shortlist exists  
 
 ### Conditional deliver
-- exploratory hypothesis / pipeline-reviewed signals that did not advance into a scored shortlist,
-
-- **Pipeline-reviewed signals**  
-  Early mechanism-linked leads examined by the core workflow across literature, drug, pathway, and evidence scoring. These are exploratory and are not the same as a final shortlist.
-- **Red-team challenged candidates**  
-  Stronger reportable candidates that advanced far enough to be stress-tested by the red-team layer before delivery.  
+ - exploratory hypotheses or pipeline-reviewed signals that did not advance into the final shortlist
+   
+**Pipeline-reviewed signals**
+Early mechanism-linked leads surfaced by the literature, drug, pathway, and candidate-review workflow. These are exploratory and are not the same as a final shortlist.
+**Red-team challenged candidates**
+Stronger candidates that reached the shortlist stage and were stress-tested by the red-team layer before delivery.
 
 ### Reject
 - no defensible signal  
