@@ -671,7 +671,7 @@ function formatActivityMessage(message: string, eventType: string, agentName?: s
       if (match) return `Red Team -> PI: ${match[1]} challenge notes ready.`;
     }
     if (agentName === 'report' && /^Report narrative synthesized with /i.test(message)) {
-      return 'Report -> PI: research brief drafted.';
+      return 'Final research brief synthesized.';
     }
   }
 

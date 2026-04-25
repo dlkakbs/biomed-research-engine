@@ -342,9 +342,9 @@ export default function Home() {
               <FadeUpItem className="w-full border-t border-slate-800/60 pt-6">
                 <p className="text-xs uppercase tracking-widest text-sky-300 text-center mb-4">Independent Peer Review Panel</p>
                 <div className="grid grid-cols-3 gap-4 max-w-4xl mx-auto">
-                  <AgentNode name="Dr. Leo"   role="Reviewer I"  subtitle="Methodology Review" color="slate" detail="Checks disclaimer text, provenance fields (PMIDs, ChEMBL IDs, models, timestamp), evidence_table completeness, and that all pipeline steps are present." />
-                  <AgentNode name="Dr. Zara"  role="Reviewer II" subtitle="Consistency Review" color="slate" detail="Audits evidence score breakdowns, candidate/evidence table alignment, and flags contradictory field values." />
-                  <AgentNode name="Dr. Swift" role="Tiebreaker"  subtitle="Arbiter"            color="slate" detail="Called only on a 1–1 reviewer split. Reads both reasons and casts the deciding vote under a rejection-first principle." />
+                  <AgentNode name="Dr. Leo"   role="Reviewer I"  subtitle="Methodology Review" color="slate" detail="Verifies methodological integrity, provenance coverage, required citations, and overall report completeness before a brief can pass review." />
+                  <AgentNode name="Dr. Zara"  role="Reviewer II" subtitle="Consistency Review" color="slate" detail="Audits score consistency, candidate-to-evidence alignment, and cross-field contradictions across the final brief." />
+                  <AgentNode name="Dr. Swift" role="Tiebreaker"  subtitle="Arbiter"            color="slate" detail="Invoked only on a split decision. Reviews both reviewer rationales and issues the final ruling under a rejection-first standard." />
                 </div>
               </FadeUpItem>
             </div>
